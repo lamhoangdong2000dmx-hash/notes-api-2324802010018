@@ -1,0 +1,24 @@
+{
+  "name": "notes-api-2324802010018",
+  "version": "1.0.0",
+  "description": "Thuc hanh dien toan dam may",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lamhoangdong2000dmx-hash/notes-api-2324802010018.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lamhoangdong2000dmx-hash/notes-api-2324802010018/issues"
+  },
+  "homepage": "https://github.com/lamhoangdong2000dmx-hash/notes-api-2324802010018#readme",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}

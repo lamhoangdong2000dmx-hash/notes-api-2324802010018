@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1 - Hello Cloud API</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            margin: 0;
+            padding: 30px;
+            color: #222;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #154a8b;
+            text-align: center;
+        }
+
+        h2 {
+            color: #1761ad;
+            border-bottom: 2px solid #1761ad;
+            padding-bottom: 8px;
+            margin-top: 35px;
+        }
+
+        .info {
+            background-color: #eaf3ff;
+            padding: 15px;
+            border-radius: 6px;
+            line-height: 1.8;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+            line-height: 1.5;
+        }
+
+        th {
+            background-color: #1761ad;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f1f6fc;
+        }
+
+        .note {
+            margin-top: 15px;
+            padding: 12px;
+            background: #fff8e6;
+            border-left: 4px solid #e4aa20;
+            line-height: 1.6;
+        }
+
+        footer {
+            margin-top: 35px;
+            text-align: center;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>BÀI 1 - LẬP TRÌNH TRÊN MÁY ẢO ĐÁM MÂY ĐẦU TIÊN</h1>
+
+        <div class="info">
+            <strong>Họ và tên:</strong> Lâm Hoàng Đông<br>
+            <strong>Mã số sinh viên:</strong> 2324802010018<br>
+            <strong>Môn học:</strong> Điện toán đám mây<br>
+            <strong>Repository:</strong> notes-api-2324802010018<br>
+            <strong>Công nghệ:</strong> GitHub Codespaces, Node.js, Express.js
+        </div>
+
+        <h2>1. Bảng so sánh máy cá nhân và GitHub Codespaces</h2>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tiêu chí</th>
+                        <th>Máy cá nhân</th>
+                        <th>GitHub Codespaces</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Thời gian từ lúc bắt đầu đến khi chạy được node -v</td>
+                        <td>Chưa đo thời gian trên máy cá nhân.</td>
+                        <td>7 phút 30 giây (450 giây).</td>
+                    </tr>
+
+                    <tr>
+                        <td>Số CPU và RAM</td>
+                        <td>
+                            Intel Core i7-12700H<br>
+                            14 lõi, 20 luồng<br>
+                            RAM: 8 GB DDR4
+                        </td>
+                        <td>
+                            CPU: 2<br>
+                            RAM: 7,8 GB<br>
+                            Theo dữ liệu Hello Cloud API
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Hệ điều hành</td>
+                        <td>
+                            Windows 11 Home Single Language<br>
+                            Phiên bản 25H2<br>
+                            OS Build 26200.9711
+                        </td>
+                        <td>Linux 6.8.0-1064-azure</td>
+                    </tr>
+
+                    <tr>
+                        <td>Cách truy cập từ thiết bị khác</td>
+                        <td>
+                            Nếu chạy API trên máy cá nhân,
+                            cần cấu hình mạng, địa chỉ IP
+                            và cổng truy cập.
+                        </td>
+                        <td>
+                            Truy cập API qua URL HTTPS
+                            khi Port 3000 được đặt Public.
+                            Sau khi kiểm tra đã chuyển lại Private.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Chi phí, đo bằng gì</td>
+                        <td>
+                            Sử dụng tài nguyên máy cá nhân.
+                            Chi phí điện và Internet chưa đo.
+                        </td>
+                        <td>
+                            Đo bằng GitHub Billing Usage.<br>
+                            Tổng mức sử dụng ghi nhận: $0.18.<br>
+                            Mức sử dụng được bao gồm: $0.18.<br>
+                            Số tiền phải trả: $0.00.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="note">
+            <strong>Ghi chú:</strong>
+            Số liệu được tổng hợp từ Task Manager,
+            thông tin Windows, Hello Cloud API và
+            GitHub Billing Usage ngày 05/11/2026.
+            Thời gian khởi tạo Codespaces thực tế là
+            7 phút 30 giây, chưa đạt mục tiêu dưới 2 phút.
+        </div>
+
+        <h2>2. Liên hệ 5 đặc tính điện toán đám mây của NIST</h2>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Đặc tính NIST</th>
+                        <th>Thao tác thực hiện và liên hệ</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>On-demand Self-service<br>(Tự phục vụ theo yêu cầu)</td>
+                        <td>
+                            Tự tạo Codespace trên GitHub
+                            bằng chức năng Create codespace on main,
+                            không cần yêu cầu người quản trị
+                            cấp phát máy chủ thủ công.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>Broad Network Access<br>(Truy cập mạng rộng)</td>
+                        <td>
+                            Chạy Hello Cloud API trên cổng 3000.
+                            Chuyển Port Visibility sang Public
+                            để truy cập API qua URL HTTPS
+                            bằng thiết bị khác, sau đó chuyển lại Private.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>Resource Pooling<br>(Gộp tài nguyên)</td>
+                        <td>
+                            Sử dụng CPU, RAM và môi trường Linux
+                            do hạ tầng đám mây cung cấp.
+                            API ghi nhận host codespaces-824b46,
+                            2 CPU và 7,8 GB RAM.
+                            Đây là quan sát về tài nguyên được cấp phát;
+                            cơ chế chia sẻ tài nguyên vật lý
+                            thuộc phía nhà cung cấp.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td>Rapid Elasticity<br>(Co giãn nhanh)</td>
+                        <td>
+                            Codespaces hỗ trợ lựa chọn và
+                            thay đổi cấu hình máy ảo theo nhu cầu.
+                            Trong bài thực hành đã cấp phát
+                            môi trường để chạy ứng dụng.
+                            Chưa thực nghiệm thay đổi số CPU/RAM,
+                            nên chưa trực tiếp kiểm chứng tốc độ co giãn.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td>Measured Service<br>(Dịch vụ đo lường được)</td>
+                        <td>
+                            Mở GitHub Settings - Billing and licensing
+                            - Usage để kiểm tra mức sử dụng.
+                            Tài khoản ghi nhận $0.18,
+                            được bao gồm trong hạn mức miễn phí,
+                            nên số tiền phải trả là $0.00.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>3. Kết luận</h2>
+
+        <p>
+            Qua bài thực hành, em đã tạo môi trường lập trình
+            trên GitHub Codespaces, xây dựng Hello Cloud API
+            bằng Node.js và Express.js, truy cập API từ thiết bị
+            khác và theo dõi mức sử dụng tài nguyên trên GitHub.
+        </p>
+
+        <p>
+            Kết quả giúp em hiểu sự khác biệt giữa lập trình
+            trên máy cá nhân và môi trường điện toán đám mây,
+            đồng thời liên hệ với 5 đặc tính điện toán đám mây
+            theo NIST.
+        </p>
+
+        <p>
+            <strong>Tham khảo:</strong>
+            <a href="https://csrc.nist.gov/pubs/sp/800/145/final"
+               target="_blank" rel="noopener noreferrer">
+                NIST SP 800-145 - The NIST Definition of Cloud Computing
+            </a>
+        </p>
+
+        <footer>
+            <p>Thực hiện bởi: Lâm Hoàng Đông - 2324802010018</p>
+        </footer>
+
+    </div>
+</body>
+</html>
